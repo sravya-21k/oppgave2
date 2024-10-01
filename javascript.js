@@ -1,28 +1,28 @@
 /******************************************************************************
 Functions and Methods assignment
 
-Read the assignment text CAREFULLY. Do NOT change the name of any of the
-functions in this assignment, it will disable the automated unit testing.
+Read the assignment text CAREFULLY. Show some examples in your code that tests
+your functions and methods. Use a variation of arrow functions and 
+function keyword functions.
+
+Add comments to your code that briefly describe what your code does.
 
 1.
 
-Complete the function below:
+Make the following function:
 
 The function should take in a number as a parameter and return
 "Odd" if the number received is an odd number and "Even" if the number
 received is an even number.
 
-HINT: Use the modulo operator (%) Google it! 😊
 ******************************************************************************/
 
-const oddOrEven = () => {
-    //your code here
-  };
+
   
 /******************************************************************************
 2.
 
-Complete the function below:
+Make the following function:
 
 The function should take in a string as a parameter and return the string 
 in upper case with an exclamation mark at the end.
@@ -31,14 +31,11 @@ Example: "This is cool" should return "THIS IS COOL!"
 
 ******************************************************************************/
 
-function makeMeLoud() {
-  //your code here
-}
 
 /******************************************************************************
 3.
 
-Complete the function below:
+Make the following function:
 
 The function should take in 2 parameters:
 
@@ -53,17 +50,16 @@ The function should return:
 "Good evening (name received)" if the hour received is 18-23
 "Invalid time" if the hour received is greater than 23
 
+If no hour is received, your function should return an error message.
 
 ******************************************************************************/
 
-const greeter = () => {
-  //your code here
-};
+
 
 /******************************************************************************
 4.
 
-Complete the function below:
+Make the following function:
 
 The function should take in an array as a parameter, and return the array 
 with the first and last index removed.
@@ -74,14 +70,12 @@ Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ["Two", "Three", "Four", "Five"]
 ******************************************************************************/
 
-function arrayTrimmer() {
-  //your code here
-}
+
 
 /******************************************************************************
 5.
 
-Complete the function below:
+Make the following function:
 
 The function should take in a string as a parameter.
 
@@ -97,19 +91,10 @@ Example3: "   hard        " should return "fun"
 
 ******************************************************************************/
 
-const cleanAndFun = () => {
-  //your code here
-};
+
 
 /******************************************************************************
 6.
-
-Complete the function below:
-
-The function should take in an array as a parameter.
-
-The automatic testing will test your function with the following array:
-["Spider-Man", "Thor", "Hulk", "Doctor Strange", "Iron Man", "Black Widow"]
 
 Use array methods to do the following:
 
@@ -118,12 +103,11 @@ Use array methods to do the following:
  - Use the splice method to remove Thor and Hulk and add "Captain America"
  - Join the array to a string with "💪" between each hero
 
- Return the resulting array.
 ******************************************************************************/
 
-function marvelEditor() {
-  //your code here
-}
+const heroes = ["Spider-Man", "Thor", "Hulk", "Doctor Strange", "Iron Man", "Black Widow"]
+
+
 
 /******************************************************************************
 7.
@@ -132,7 +116,7 @@ EXTRA CHALLENGE
 
 This is not mandatory, only for those who want an extra challenge.
 
-Complete the function below:
+Make the following function:
 
 The function should take in 1 parameter.
 
@@ -152,9 +136,7 @@ Return "😎Primitive values only😎"
 
 ******************************************************************************/
 
-function coolMaker() {
-  //your code here
-}
+
 
 /******************************************************************************
 8.
@@ -163,7 +145,7 @@ EXTRA CHALLENGE #2:
 
 This is not mandatory, only for those who want an extra challenge.
 
-Complete the function below:
+Make the following function:
 
 The function should take in 2 parameters, 1 array and 1 string.
 
@@ -179,7 +161,5 @@ Example3: (["One", "Two", "Three"], "Four") --> ["One", "Two", "Three", "Four"]
 Example4: (["One", "Two", "Three"], "Two") --> ["One", "Three"]
 ******************************************************************************/
 
-const addOrRemove = () => {
-  //your code here
-};
+
   
