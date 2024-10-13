@@ -17,13 +17,14 @@ received is an even number.
 
 ******************************************************************************/
 function myFunction(number) {
-  if (number % 2 === 0) {
-    return "odd";
-  } else {
-    return "even";
-  }
+  // if (number % 2 === 0) {
+  //   return "odd";
+  // } else {
+  //   return "even";
+  // }
+  return number % 2 === 0 ? "odd" : "even";
 }
-console.log(myFunction(3));
+console.log(myFunction(4));
 //console.log(myFunction(10));
 /******************************************************************************
   2.
@@ -36,11 +37,11 @@ console.log(myFunction(3));
   Example: "This is cool" should return "THIS IS COOL!"
   
   ******************************************************************************/
-
-const str = "This is cool";
-const upperCaseStr = str.toUpperCase();
-console.log(upperCaseStr + "!");
-
+function myString(str) {
+  const upperCaseStr = str.toUpperCase() + "!";
+  return upperCaseStr;
+}
+console.log(myString("This is cool"));
 /******************************************************************************
   3.
   
@@ -64,7 +65,7 @@ console.log(upperCaseStr + "!");
   ******************************************************************************/
 
 function greet(hour) {
-  if (hour < 0) {
+  if (hour < 0 || hour > 23) {
     return "Invalid Time";
   } else if (hour >= 0 && hour <= 5) {
     return "Good night";
@@ -74,8 +75,6 @@ function greet(hour) {
     return "Good day";
   } else if (hour >= 18 && hour <= 23) {
     return "Good evening";
-  } else if (hour > 23) {
-    return "Invalid Time";
   } else {
     return "error message";
   }
@@ -95,10 +94,14 @@ console.log(greet());
   Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
   ["Two", "Three", "Four", "Five"]
   ******************************************************************************/
-const Myarray = ["Red", "Green", "Blue", "Yellow"];
-console.log(Myarray.splice(1, 2));
-const Numbers = ["One", "Two", "Three", "Four", "Five", "Six"];
-console.log(Numbers.splice(1, 4));
+function myArray(parameter) {
+  // Use slice to extract elements from index 1 to the second last element (-1)
+  const result = parameter.slice(1, -1); // The slice(1, -1) means it starts at index 1 and stops just before the last element
+  return result;
+}
+
+console.log(myArray(["Red", "Green", "Blue", "Yellow"]));
+console.log(myArray(["One", "Two", "Three", "Four", "Five", "Six"]));
 /******************************************************************************
   5.
   
@@ -117,13 +120,15 @@ console.log(Numbers.splice(1, 4));
   Example3: "   hard        " should return "fun"
   
   ******************************************************************************/
-//const String = "Javascript is hard";
-//console.log(String.replace("hard", "fun"));
-const Mystring = "  It's hard to use methods  ";
+function myNewString(String) {
+  //Remove the whitespace from the beginning and end of the string  and replaced
+  const myString = String.trim().replace("hard", "fun");
+  return myString;
+}
+myNewString("  Javascript is hard   ");
+myNewString(" It's hard to use methods ");
+myNewString("   hard        ");
 
-console.log(Mystring.trim());
-const newStr = "     hard   ";
-console.log(newStr.trim().replace("hard", "fun"));
 /******************************************************************************
   6.
   
@@ -144,8 +149,13 @@ const heroes = [
   "Iron Man",
   "Black Widow",
 ];
-console.log(heroes.slice(1));
-console.log(heroes.toSpliced(3, 1, "Skull"));
+//Remove the first hero
+console.log(heroes.splice());
+//Remove Doctor strange with "skrull"
+console.log(heroes.splice(2, 1, "Skrull"));
+//removed Thor and Hulk and add "Captain America"
+console.log(heroes.splice(0, 2, "Captain America"));
+//string with "💪" between each hero
 console.log(heroes.join("💪"));
 /******************************************************************************
   7.
@@ -175,22 +185,21 @@ console.log(heroes.join("💪"));
   ******************************************************************************/
 function myFunction(parameter) {
   if (typeof parameter === "string") {
-    return "😎string 😎";
+    return "${parameter} 😎";
   } else if (typeof parameter === "number") {
     return `😎${(parameter * 2).toString()}😎`;
-  } else if (parameter === true) {
-    return "😎Yeah😎";
-  } else if (parameter === false) {
-    return "😎Chill😎";
+  } else if (typeof parameter === "Boolean") {
+    return parameter ? "😎Yeah😎" : "😎Yeah😎";
   } else {
     return "😎Primitive values only😎";
   }
 }
-console.log(myFunction("hello"));
-console.log(myFunction(6));
+console.log(myFunction("hello")); //Checked with string
+console.log(myFunction(6)); //checked with number
+//checked with boolean
 console.log(myFunction(true));
 console.log(myFunction(false));
-console.log(myFunction({}));
+console.log(myFunction({})); //checked with datatype
 /******************************************************************************
   8.
   
@@ -213,18 +222,21 @@ console.log(myFunction({}));
   Example3: (["One", "Two", "Three"], "Four") --> ["One", "Two", "Three", "Four"]
   Example4: (["One", "Two", "Three"], "Two") --> ["One", "Three"]
   ******************************************************************************/
-function updateArray(array, itemToCheck) {
-  if (array.includes(itemToCheck)) {
-    const index = array.indexOf(itemToCheck);
+//function with two parameters 1 array, 1 string
+function myNewArray(array, string) {
+  // Check if the array contains the string
+  if (array.includes(string)) {
+    //If the array contains the string, find its index and remove it
+    const index = array.indexOf(string); //find the index of the string
 
-    array.splice(index, 1);
+    array.splice(index, 1); //Remove the string at that index
   } else {
-    array.push(itemToCheck);
+    array.push(string); //if array does not contain the string added string to the end of the array
   }
-
+  //Return the modified array
   return array;
 }
-console.log(updateArray(["Red", "Green"], "Blue"));
-console.log(updateArray(["Red", "Green", "Blue"], "Green"));
-console.log(updateArray(["One", "Two", "Three"], "Four"));
-console.log(updateArray(["One", "Two", "Three"], "Two"));
+console.log(myNewArray(["Red", "Green"], "Blue"));
+console.log(myNewArray(["Red", "Green", "Blue"], "Green"));
+console.log(myNewArray(["One", "Two", "Three"], "Four"));
+console.log(myNewArray(["One", "Two", "Three"], "Two"));
