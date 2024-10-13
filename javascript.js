@@ -22,7 +22,8 @@ function myFunction(number) {
   // } else {
   //   return "even";
   // }
-  return number % 2 === 0 ? "odd" : "even";
+
+  return number % 2 === 0 ? "odd" : "even"; //Used ternary
 }
 console.log(myFunction(4));
 //console.log(myFunction(10));
@@ -65,6 +66,7 @@ console.log(myString("This is cool"));
   ******************************************************************************/
 
 function greet(hour) {
+  //used OR logical method
   if (hour < 0 || hour > 23) {
     return "Invalid Time";
   } else if (hour >= 0 && hour <= 5) {
@@ -189,7 +191,7 @@ function myFunction(parameter) {
   } else if (typeof parameter === "number") {
     return `😎${(parameter * 2).toString()}😎`;
   } else if (typeof parameter === "Boolean") {
-    return parameter ? "😎Yeah😎" : "😎Yeah😎";
+    return parameter ? "😎Yeah😎" : "😎Yeah😎"; // used ternary
   } else {
     return "😎Primitive values only😎";
   }
